@@ -1,1 +1,1 @@
-Lindsey Kwok's website
+# lindseykwok.github.io
