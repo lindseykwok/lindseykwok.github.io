@@ -2783,56 +2783,7 @@ section:before, section:after {
   box-shadow: none !important;
 }
 
-/* ---------- STARFIELD BACKGROUND + TWINKLE ---------- */
 
-/* Own the background ONLY on body (don’t shorthand-reset) */
-body{
-  background-color: var(--bg) !important;           /* fallback */
-  background-image: var(--star-img-url) !important; /* your star field */
-  background-repeat: repeat;
-  background-size: auto;                            /* keep texture scale */
-  background-attachment: fixed;
-  background-position: center top;
-  color: var(--text-hi) !important;
-  animation: stars-drift 180s linear infinite;      /* subtle pan */
-}
-
-/* Keep sections transparent (or use panels below) */
-#page-wrapper, #header, #main, #footer, #content, #sidebar{
-  background-color: transparent !important;
-}
-
-/* Optional translucent panels for readability */
-.wrapper, #main, #footer, #header {
-  background-color: rgba(11,13,23,0.85);
-  backdrop-filter: blur(2px);
-  border-radius: 4px;
-}
-
-/* gentle parallax drift */
-@keyframes stars-drift {
-  0%   { background-position: 0 0; }
-  50%  { background-position: 200px 100px; }
-  100% { background-position: 0 0; }
-}
-
-/* twinkle layer */
-body::before{
-  content:"";
-  position:fixed; inset:0;
-  pointer-events:none;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.12) 0%, transparent 40%),
-    radial-gradient(circle at 80% 30%, rgba(255,255,255,0.10) 0%, transparent 40%),
-    radial-gradient(circle at 50% 80%, rgba(255,255,255,0.08) 0%, transparent 50%);
-  animation: twinkle 12s ease-in-out infinite alternate;
-  mix-blend-mode: screen;
-  opacity:.7;
-}
-@keyframes twinkle{
-  0%,100%{ opacity:.7; transform:scale(1); }
-  50%    { opacity:.9; transform:scale(1.02); }
-}
 
 /* ---------- Header title & small text ---------- */
 #header h1, #header h1 a{
