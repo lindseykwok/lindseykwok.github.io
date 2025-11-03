@@ -2939,14 +2939,6 @@ body{
   background-size: auto !important;       /* keep texture scale; try 'cover' if you prefer */
   background-attachment: fixed !important;
   background-position: center top !important;
-
-  /* gentle drift (optional) */
-  animation: stars-drift 180s linear infinite;
-}
-@keyframes stars-drift {
-  0%   { background-position: 0 0; }
-  50%  { background-position: 200px 100px; }
-  100% { background-position: 0 0; }
 }
 
 /* 3) Make the main wrapper transparent so the starfield can be seen */
