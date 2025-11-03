@@ -1,1 +1,0 @@
-# lindseykwok.github.io
