@@ -3324,6 +3324,9 @@ ul.actions li {
   text-align: center;
   flex: 1 1 0;        /* let the text own the middle space */
   min-width: 500px;   /* don't let the text get too narrow */
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: keep-all;
 }
 
 /* left + right groups */
@@ -3363,11 +3366,11 @@ ul.actions li {
 }
 
 /* stack only on narrow viewports */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 680px) {
   .hero-head {
     flex-direction: column;
     flex-wrap: wrap;   /* now okay to wrap */
-    gap: 1.5rem;
+    gap: 1rem;
   }
   .hero-left,
   .hero-right {
