@@ -3311,13 +3311,15 @@ ul.actions li {
 }
 
 /* Layout row: logo | text | headshot */
-.hero-head {
+#header .hero-head {
   display: flex;
+  flex-direction: row;                         /* <-- force row on desktop */
   align-items: center;
   justify-content: center;
-  gap: 2.5rem;            /* nice spacing */
-  flex-wrap: nowrap;      /* row on desktop */
+  gap: clamp(1rem, 3vw, 3rem);                /* gap shrinks on smaller screens */
+  flex-wrap: nowrap;                          /* keep in a row until mobile */
 }
+
 
 /* center column – the name block */
 .hero-text {
@@ -3359,9 +3361,9 @@ ul.actions li {
   box-shadow: 0 0 10px rgba(0,0,0,0.35);
 }
 
-/* stack ONLY on true small screens */
+/* stack ONLY on small screens */
 @media screen and (max-width: 750px) {
-  .hero-head {
+  #header .hero-head {
     flex-direction: column;
     flex-wrap: wrap;
     gap: 1.5rem;
@@ -3371,6 +3373,7 @@ ul.actions li {
     justify-content: center;
   }
 }
+
 
 
 /* tighter vertical spacing */
