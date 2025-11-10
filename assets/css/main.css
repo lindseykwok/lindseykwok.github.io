@@ -3366,7 +3366,7 @@ ul.actions li {
 }
 
 /* stack only on narrow viewports */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
   .hero-head {
     flex-direction: column;
     flex-wrap: wrap;   /* now okay to wrap */
