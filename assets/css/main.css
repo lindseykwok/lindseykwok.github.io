@@ -3345,8 +3345,10 @@ ul.actions li {
 
 /* headshot style */
 .hero-avatar {
-  width: 250px;
-  height: 250px;
+  width: 20vw;              /* responsive scaling with viewport */
+  max-width: 250px;         /* cap at original size */
+  min-width: 150px;         /* don't shrink too far */
+  aspect-ratio: 1 / 1;      /* keeps it square */
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid rgba(255,255,255,0.6);
@@ -3355,20 +3357,24 @@ ul.actions li {
 
 /* logo style */
 .hero-logo {
-  width: 250px;
-  height: 250px;
+  width: 20vw;              /* responsive scaling */
+  max-width: 250px;
+  min-width: 150px;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid rgba(255,255,255,0.6);
   box-shadow: 0 0 10px rgba(0,0,0,0.35);
-/*  width: 250px;
-  height: 250px;
+  /* previous alternate style kept here for reference */
+  /* 
   object-fit: contain;
   border-radius: 12px;
   border: 2px solid rgba(255,255,255,0.3);
   background: rgba(255,255,255,0.08);
-  box-shadow: 0 0 8px rgba(0,0,0,0.25);*/
+  box-shadow: 0 0 8px rgba(0,0,0,0.25);
+  */
 }
+
 
 /* tighter vertical spacing */
 #header h1 {
