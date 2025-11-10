@@ -3310,49 +3310,11 @@ ul.actions li {
   opacity: 0.9; /* make them more visible */
 }
 
-/* Layout row: logo | text | headshot */
-.hero-head {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: clamp(1rem, 3vw, 3rem);   /* gap shrinks on smaller screens */
-  flex-wrap: nowrap;             /* keep in a row until mobile */
-}
-
-/* center column – the name block */
-.hero-text {
-  text-align: center;
-  flex: 1 1 0;
-  min-width: 0;                  /* allow it to shrink */
-  white-space: normal !important;
-}
-
-
-/* but keep the name on one line */
-.hero-text h1 {
-  white-space: nowrap !important;
-  font-size: clamp(2.1rem, 4vw, 3.2rem);
-}
-
-/* specifically force the subtitle to wrap, even with <strong> */
-.hero-text p,
-.hero-text p strong {
-  white-space: normal !important;
-  overflow-wrap: anywhere;
-}
-
-/* left + right groups */
-.hero-left,
-.hero-right {
-  display: flex;
-  align-items: center;
-  flex: 0 0 auto;
-}
-
-/* circles: logo + headshot */
+/* default: nice and big on normal/larger laptops */
 .hero-avatar,
 .hero-logo {
-  width: clamp(150px, 18vw, 250px);  /* smaller min + responsive */
+  width: 260px;
+  height: 260px;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
@@ -3360,7 +3322,25 @@ ul.actions li {
   box-shadow: 0 0 10px rgba(0,0,0,0.35);
 }
 
-/* mobile stacking */
+/* slightly smaller on mid-size screens so everything still fits */
+@media screen and (max-width: 1200px) {
+  .hero-avatar,
+  .hero-logo {
+    width: 230px;
+    height: 230px;
+  }
+}
+
+/* a bit smaller again just before stacking kicks in */
+@media screen and (max-width: 1000px) {
+  .hero-avatar,
+  .hero-logo {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* keep your existing stack-at-900px behavior */
 @media screen and (max-width: 900px) {
   .hero-head {
     flex-direction: column;
