@@ -3324,7 +3324,7 @@ ul.actions li {
   text-align: center;
   flex: 1 1 0;
   min-width: 0;                  /* allow it to shrink */
-  white-space: normal !important
+  white-space: normal !important;
 }
 
 
