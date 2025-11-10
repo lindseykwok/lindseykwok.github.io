@@ -3375,7 +3375,7 @@ ul.actions li {
 }
 
 /* prevent overlap on medium / smaller screens */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
   /* shrink the images a bit */
   .hero-avatar,
   .hero-logo {
