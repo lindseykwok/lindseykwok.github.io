@@ -3315,25 +3315,15 @@ ul.actions li {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3rem;
-  flex-wrap: nowrap;   /* prevent wrapping by default */
-}
-
-/* stack only on narrow viewports */
-@media screen and (max-width: 600px) {
-  .hero-head {
-    flex-direction: column;
-    flex-wrap: wrap;   /* allow wrapping only for small screens */
-  }
-  .hero-left,
-  .hero-right {
-    justify-content: center;
-  }
+  gap: 3rem;          /* a bit tighter than 5rem to buy space */
+  flex-wrap: nowrap;  /* no wrapping on desktop */
 }
 
 /* center column */
 .hero-text {
   text-align: center;
+  flex: 1 1 0;        /* let the text own the middle space */
+  min-width: 280px;   /* don't let the text get too narrow */
 }
 
 /* left + right groups */
@@ -3341,12 +3331,13 @@ ul.actions li {
 .hero-right {
   display: flex;
   align-items: center;
+  flex: 0 0 auto;     /* don't let these steal more width than their content */
 }
 
 /* headshot style */
 .hero-avatar {
-  width: clamp(140px, 16vw, 220px);  /* responsive: shrinks earlier */
-  aspect-ratio: 1 / 1;
+  width: clamp(140px, 16vw, 220px);  /* responsive: shrinks with viewport */
+  aspect-ratio: 1 / 1;               /* stay perfectly circular */
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid rgba(255,255,255,0.6);
@@ -3361,16 +3352,7 @@ ul.actions li {
   object-fit: cover;
   border: 3px solid rgba(255,255,255,0.6);
   box-shadow: 0 0 10px rgba(0,0,0,0.35);
-  /* 
-  object-fit: contain;
-  border-radius: 12px;
-  border: 2px solid rgba(255,255,255,0.3);
-  background: rgba(255,255,255,0.08);
-  box-shadow: 0 0 8px rgba(0,0,0,0.25);
-  */
 }
-
-
 
 /* tighter vertical spacing */
 #header h1 {
@@ -3378,6 +3360,19 @@ ul.actions li {
 }
 #header p {
   margin-top: 0;
+}
+
+/* stack only on narrow viewports */
+@media screen and (max-width: 600px) {
+  .hero-head {
+    flex-direction: column;
+    flex-wrap: wrap;   /* now okay to wrap */
+    gap: 1.5rem;
+  }
+  .hero-left,
+  .hero-right {
+    justify-content: center;
+  }
 }
 
 
