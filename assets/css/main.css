@@ -3362,7 +3362,7 @@ ul.actions li {
 }
 
 /* stack ONLY on small screens */
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 900px) {
   #header .hero-head {
     flex-direction: column;
     flex-wrap: wrap;
