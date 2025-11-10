@@ -3316,7 +3316,19 @@ ul.actions li {
   align-items: center;
   justify-content: center;
   gap: 5rem;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;   /* prevent wrapping by default */
+}
+
+/* stack only on narrow viewports */
+@media screen and (max-width: 680px) {
+  .hero-head {
+    flex-direction: column;
+    flex-wrap: wrap;   /* allow wrapping only for small screens */
+  }
+  .hero-left,
+  .hero-right {
+    justify-content: center;
+  }
 }
 
 /* center column */
@@ -3366,16 +3378,7 @@ ul.actions li {
   margin-top: 0;
 }
 
-/* responsive stacking */
-@media screen and (max-width: 880px) {
-  .hero-head {
-    flex-direction: column;
-  }
-  .hero-left,
-  .hero-right {
-    justify-content: center;
-  }
-}
+
 
 .image.featured img {
   width: 100%;
