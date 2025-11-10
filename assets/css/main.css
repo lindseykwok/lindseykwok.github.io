@@ -3332,6 +3332,10 @@ ul.actions li {
   font-size: clamp(2.1rem, 4vw, 3.2rem);         /* scales with viewport */
 }
 
+.hero-text p {
+  white-space: normal;
+}
+
 /* left + right groups */
 .hero-left,
 .hero-right {
