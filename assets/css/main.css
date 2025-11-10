@@ -3345,10 +3345,8 @@ ul.actions li {
 
 /* headshot style */
 .hero-avatar {
-  width: 20vw;              /* responsive scaling with viewport */
-  max-width: 250px;         /* cap at original size */
-  min-width: 150px;         /* don't shrink too far */
-  aspect-ratio: 1 / 1;      /* keeps it square */
+  width: clamp(140px, 16vw, 220px);  /* responsive: shrinks earlier */
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid rgba(255,255,255,0.6);
@@ -3357,15 +3355,12 @@ ul.actions li {
 
 /* logo style */
 .hero-logo {
-  width: 20vw;              /* responsive scaling */
-  max-width: 250px;
-  min-width: 150px;
+  width: clamp(140px, 16vw, 220px);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid rgba(255,255,255,0.6);
   box-shadow: 0 0 10px rgba(0,0,0,0.35);
-  /* previous alternate style kept here for reference */
   /* 
   object-fit: contain;
   border-radius: 12px;
@@ -3374,6 +3369,7 @@ ul.actions li {
   box-shadow: 0 0 8px rgba(0,0,0,0.25);
   */
 }
+
 
 
 /* tighter vertical spacing */
