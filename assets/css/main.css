@@ -3315,26 +3315,25 @@ ul.actions li {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(1rem, 3vw, 3rem);   /* gap shrinks on smaller screens */
-  flex-wrap: nowrap;             /* keep in a row until mobile */
+  gap: 2.5rem;            /* nice spacing */
+  flex-wrap: nowrap;      /* row on desktop */
 }
 
 /* center column – the name block */
 .hero-text {
   text-align: center;
-  flex: 1 1 0;
-  min-width: 0;                  /* allow it to shrink */
-  white-space: normal !important
+  flex: 1 1 auto;         /* let it grow/shrink as needed */
+  min-width: 0;
+  white-space: normal !important;
 }
 
-
-/* but keep the name on one line */
+/* name: one line, but responsive size */
 .hero-text h1 {
   white-space: nowrap !important;
   font-size: clamp(2.1rem, 4vw, 3.2rem);
 }
 
-/* specifically force the subtitle to wrap, even with <strong> */
+/* subtitle (inside <p><strong>): allowed to wrap */
 .hero-text p,
 .hero-text p strong {
   white-space: normal !important;
@@ -3349,11 +3348,10 @@ ul.actions li {
   flex: 0 0 auto;
 }
 
-/* default: nice and big on normal/larger laptops */
+/* circles: logo + headshot – smaller again, but not tiny */
 .hero-avatar,
 .hero-logo {
-  width: 260px;
-  height: 260px;
+  width: clamp(180px, 20vw, 230px);  /* default ~200–230px on laptop */
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
@@ -3361,26 +3359,8 @@ ul.actions li {
   box-shadow: 0 0 10px rgba(0,0,0,0.35);
 }
 
-/* slightly smaller on mid-size screens so everything still fits */
-@media screen and (max-width: 1200px) {
-  .hero-avatar,
-  .hero-logo {
-    width: 230px;
-    height: 230px;
-  }
-}
-
-/* a bit smaller again just before stacking kicks in */
-@media screen and (max-width: 1000px) {
-  .hero-avatar,
-  .hero-logo {
-    width: 200px;
-    height: 200px;
-  }
-}
-
-/* keep your existing stack-at-900px behavior */
-@media screen and (max-width: 900px) {
+/* stack ONLY on true small screens */
+@media screen and (max-width: 750px) {
   .hero-head {
     flex-direction: column;
     flex-wrap: wrap;
@@ -3391,6 +3371,7 @@ ul.actions li {
     justify-content: center;
   }
 }
+
 
 /* tighter vertical spacing */
 #header h1 {
