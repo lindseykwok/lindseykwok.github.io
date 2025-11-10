@@ -3332,8 +3332,11 @@ ul.actions li {
   font-size: clamp(2.1rem, 4vw, 3.2rem);         /* scales with viewport */
 }
 
-.hero-text p {
+.hero-text p,
+.hero-text p strong {
   white-space: normal;
+  display: inline;  /* make sure strong doesn't turn into inline-block */
+  overflow-wrap: anywhere;
 }
 
 /* left + right groups */
