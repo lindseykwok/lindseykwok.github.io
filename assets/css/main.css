@@ -3315,18 +3315,20 @@ ul.actions li {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;          /* a bit tighter than 5rem to buy space */
-  flex-wrap: nowrap;  /* no wrapping on desktop */
+  gap: clamp(1rem, 3vw, 3rem);   /* gap shrinks on smaller screens */
+  flex-wrap: nowrap;             /* keep in a row until mobile */
 }
 
-/* center column */
+/* center column – the name block */
 .hero-text {
   text-align: center;
-  flex: 1 1 0;        /* let the text own the middle space */
-  min-width: 500px;   /* don't let the text get too narrow */
-  white-space: nowrap;
-  overflow-wrap: normal;
-  word-break: keep-all;
+  flex: 1 1 0;
+  min-width: 0;                  /* allow it to shrink */
+}
+
+.hero-text h1 {
+  white-space: nowrap;                           /* never wrap */
+  font-size: clamp(2.1rem, 4vw, 3.2rem);         /* scales with viewport */
 }
 
 /* left + right groups */
@@ -3334,22 +3336,13 @@ ul.actions li {
 .hero-right {
   display: flex;
   align-items: center;
-  flex: 0 0 auto;     /* don't let these steal more width than their content */
+  flex: 0 0 auto;
 }
 
-/* headshot style */
-.hero-avatar {
-  width: clamp(140px, 16vw, 220px);  /* responsive: shrinks with viewport */
-  aspect-ratio: 1 / 1;               /* stay perfectly circular */
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid rgba(255,255,255,0.6);
-  box-shadow: 0 0 10px rgba(0,0,0,0.35);
-}
-
-/* logo style */
+/* circles: logo + headshot */
+.hero-avatar,
 .hero-logo {
-  width: clamp(140px, 16vw, 220px);
+  width: clamp(90px, 12vw, 200px);   /* smaller min + responsive */
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
@@ -3357,25 +3350,26 @@ ul.actions li {
   box-shadow: 0 0 10px rgba(0,0,0,0.35);
 }
 
+/* mobile stacking */
+@media screen and (max-width: 900px) {
+  .hero-head {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .hero-left,
+  .hero-right {
+    justify-content: center;
+  }
+}
+
+
 /* tighter vertical spacing */
 #header h1 {
   margin-bottom: 3.5rem;
 }
 #header p {
   margin-top: 0;
-}
-
-/* stack only on narrow viewports */
-@media screen and (max-width: 900px) {
-  .hero-head {
-    flex-direction: column;
-    flex-wrap: wrap;   /* now okay to wrap */
-    gap: 1rem;
-  }
-  .hero-left,
-  .hero-right {
-    justify-content: center;
-  }
 }
 
 
