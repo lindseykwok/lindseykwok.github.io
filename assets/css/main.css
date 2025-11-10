@@ -3315,7 +3315,7 @@ ul.actions li {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5rem;
+  gap: 3rem;
   flex-wrap: nowrap;   /* prevent wrapping by default */
 }
 
