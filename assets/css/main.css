@@ -3352,7 +3352,7 @@ ul.actions li {
 /* circles: logo + headshot */
 .hero-avatar,
 .hero-logo {
-  width: clamp(250px, 18vw, 400px);  /* smaller min + responsive */
+  width: clamp(250px, 24vw, 400px);  /* smaller min + responsive */
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   object-fit: cover;
