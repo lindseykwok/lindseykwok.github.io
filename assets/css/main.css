@@ -3324,18 +3324,20 @@ ul.actions li {
   text-align: center;
   flex: 1 1 0;
   min-width: 0;                  /* allow it to shrink */
-  white-space: normal;
+  white-space: normal !important
 }
 
+
+/* but keep the name on one line */
 .hero-text h1 {
-  white-space: nowrap;                           /* never wrap */
-  font-size: clamp(2.1rem, 4vw, 3.2rem);         /* scales with viewport */
+  white-space: nowrap !important;
+  font-size: clamp(2.1rem, 4vw, 3.2rem);
 }
 
+/* specifically force the subtitle to wrap, even with <strong> */
 .hero-text p,
 .hero-text p strong {
-  white-space: normal;
-  display: inline;  /* make sure strong doesn't turn into inline-block */
+  white-space: normal !important;
   overflow-wrap: anywhere;
 }
 
