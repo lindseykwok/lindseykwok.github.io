@@ -152,6 +152,50 @@ section + section {
 }
 #logo + p strong {
   font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* ---------- Research navigation dropdown ---------- */
+body .dropotron {
+  background: rgba(11, 13, 23, 0.98) !important;
+  border: 1px solid rgba(242, 159, 90, 0.72) !important;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.5em 0 !important;
+}
+body .dropotron.level-0:after {
+  border-bottom: solid 0.75em rgba(11, 13, 23, 0.98) !important;
+}
+body .dropotron.level-0:before {
+  border-bottom: solid 0.75em rgba(242, 159, 90, 0.72) !important;
+}
+body .dropotron li > a,
+body .dropotron li > span {
+  color: var(--orange) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em;
+  border: 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding: 0.55em 1em !important;
+}
+body .dropotron li:first-child > a,
+body .dropotron li:first-child > span {
+  border-top: 0 !important;
+}
+body .dropotron li:hover > a,
+body .dropotron li:hover > span,
+body .dropotron li:focus-within > a,
+body .dropotron li:focus-within > span {
+  color: #fff !important;
+  background: rgba(129, 59, 130, 0.38) !important;
+  border-left: 3px solid var(--orange) !important;
+  padding-left: calc(1em - 3px) !important;
+}
+body .dropotron a:focus-visible {
+  outline: 2px solid var(--orange) !important;
+  outline-offset: -2px;
 }
 
 /* Homepage hero: logo | name | headshot, in one row until small screens */
@@ -249,9 +293,11 @@ h2 strong, h3 strong {
   color: #ffffff !important;
   text-shadow: 0 0 8px rgba(255,255,255,0.35);
 }
-p strong {
-  color: #ffffff !important;
-  text-shadow: 0 0 4px rgba(255,255,255,0.2);
+p strong,
+p b {
+  color: inherit !important;
+  font-weight: 400;
+  text-shadow: none;
 }
 
 /* ---------- Buttons (outline style) ---------- */
